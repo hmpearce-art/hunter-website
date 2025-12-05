@@ -6,33 +6,51 @@
     --accent: #ffcc00;
 }
 
+/* Base Styles */
+
 body {
     background-color: var(--background);
     color: var(--text);
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
-    font-size: 20px; /* Larger base font size */
-    text-align: center; /* Center text horizontally */
-    width: 100%; /* Ensure content takes up full width */
+    font-size: 20px;
+    text-align: center;
+    width: 100%;
 }
 
 h1 {
-    font-size: 3rem; /* Larger main heading */
+    font-size: 3rem;
     margin: 20px 0;
 }
 
 h2 {
-    font-size: 2.5rem; /* Larger subheading */
+    font-size: 2.5rem;
     margin: 15px 0;
 }
 
 p {
-    font-size: 1.2rem; /* Larger paragraphs */
+    font-size: 1.2rem;
     line-height: 1.6;
-    max-width: 800px; /* Limit the width of paragraphs */
+    max-width: 800px;
     margin: 10px auto;
 }
+
+/* Main Layout */
+
+main {
+    padding: 2em 1em;
+    max-width: 1000px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+section {
+    margin-bottom: 2em;
+}
+
+/* Header & Navigation */
 
 header {
     background-color: var(--primary);
@@ -47,31 +65,36 @@ nav ul {
     margin: 0;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 nav ul li {
-    margin: 0 20px;
+    margin: 0 10px;
 }
 
 nav ul li a {
     color: var(--text);
     text-decoration: none;
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 nav ul li a:hover {
     color: var(--accent);
 }
 
+/* Footer */
+
 footer {
     background-color: var(--secondary);
     padding: 1.5em 0;
     width: 100%;
-    text-align: center;
     box-sizing: border-box;
     margin-top: 40px;
 }
+
+/* Contact Form */
 
 .contact-form {
     background-color: var(--secondary);
@@ -87,14 +110,14 @@ footer {
 .contact-form label {
     display: block;
     margin: 15px 0 10px;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 .contact-form input,
 .contact-form textarea {
     width: 100%;
-    padding: 15px;
-    margin: 10px 0;
+    padding: 12px;
+    margin: 8px 0;
     border: 1px solid var(--primary);
     border-radius: 4px;
     font-size: 1rem;
@@ -103,8 +126,8 @@ footer {
 .contact-form button {
     background-color: var(--primary);
     color: var(--text);
-    padding: 15px 20px;
-    font-size: 1.2rem;
+    padding: 12px 20px;
+    font-size: 1.1rem;
     border: none;
     cursor: pointer;
     border-radius: 4px;
@@ -113,4 +136,136 @@ footer {
 
 .contact-form button:hover {
     background-color: var(--accent);
+    color: var(--secondary);
+}
+
+/* Page Layout with Side Images */
+
+main.page-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    max-width: 1200px;
+}
+
+/* Center column for text */
+.page-layout .center-content {
+    flex: 2;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Side image columns */
+.side-image {
+    flex: 1;
+    text-align: center;
+}
+
+.side-image figure {
+    margin: 0;
+}
+
+.side-image img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    max-height: 500px;
+    border-radius: 8px;
+    margin: 0 auto 10px auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.side-image figcaption {
+    font-size: 0.95rem;
+    max-width: 260px;
+    margin: 0 auto;
+}
+
+/* Quotes */
+
+.quote {
+    font-style: italic;
+    font-size: 1.3rem;
+    margin-top: 15px;
+}
+
+/* Video Styling */
+
+.video-container {
+    margin: 30px auto 0 auto;
+    max-width: 700px;
+}
+
+.video-container video {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* Progress Table */
+
+.progress-table {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: var(--secondary);
+    color: var(--text);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.progress-table th,
+.progress-table td {
+    padding: 12px;
+    border: 1px solid var(--primary);
+    text-align: center;
+}
+
+.progress-table th {
+    background-color: var(--primary);
+    color: var(--text);
+    font-size: 1.2rem;
+}
+
+.progress-table tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Home Page Large Intro */
+
+main.home-large {
+    max-width: 900px;
+}
+
+.home-large h2 {
+    font-size: 3rem;
+    text-align: center;
+}
+
+.home-large p {
+    font-size: 1.6rem;
+    line-height: 2;
+    margin: 25px auto;
+    max-width: 900px;
+}
+
+/* Responsive Layout */
+
+@media (max-width: 900px) {
+    main.page-layout {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .page-layout .center-content,
+    .side-image {
+        max-width: 100%;
+    }
+
+    .side-image img {
+        max-height: none;
+    }
 }
